@@ -1,0 +1,25 @@
+<ion-content>
+      <!-- nav bar heading -->
+    <div id="library-list-nav-bar" class="bar bar-header bar-calm">
+        <button id="nav-bar-left-button" ui-sref="login" class="button ion-chevron-left"></button>
+        <h1 class="title"> Choose a Library </h1>
+        <button ng-click="global.logout()" class="button button-clear">Logout</button>
+    </div>
+    <!-- end of nav bar heading -->
+
+    <!-- library list -->
+    <ion-list>
+        <ion-item ng-click="library_list_ctrl.passName(library.name)" id="library-list-ion-item" ng-repeat="library in library_list_ctrl.all_libraries" class="item-thumbnail-left item-button-right" ui-sref="library_feed">
+            <img ng-src="{{ library.photo }}">
+            <h2 ng-if="library.name.length < 30"> {{ library.name }} </h2>
+            <h5 ng-if="library.name.length > 30"> {{ library.name }} </h5>
+            <p> {{ library.address }} </p>
+            <p ng-if="library.address_two"> {{ library.address_two }} </p>
+            <hr>
+            <p>Hours: {{ library.hours }}</p>
+            <button ng-click="library_list_ctrl.show_modal(library.name, library.phone)" class="button button-light"><i id="library-list-phone-btn"  class="ion-ios-telephone-outline"></i></button>
+        </ion-item>
+    </ion-list>
+    <!-- end of library list -->
+
+</ion-content>

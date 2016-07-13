@@ -1,0 +1,49 @@
+<ion-content>
+    <!-- nav bar -->
+    <div id="login-nav-bar" class="bar bar-header bar-calm">
+        <h1 class="title">Sign Up</h1>
+    </div>
+    <!-- end of nav bar -->
+
+    <!-- input fields -->
+    <div class="list login-input-list">
+        <label class="item item-input item-floating-label login-label">
+            <span class="input-label login-span-label">School Email</span>
+            <input ng-model="signup_ctrl.new_user.email" class="login-input" type="email" placeholder="School Email">
+        </label>
+
+        <label class="item item-input item-floating-label login-label">
+            <span class="input-label login-span-label">Create a Password</span>
+            <input ng-model="signup_ctrl.new_user.password" class="login-input" type="password" placeholder="Create a Password">
+        </label>
+    </div>
+    <!-- end of input fields -->
+
+    <!-- signup button -->
+    <div class="row login-button">
+        <button ng-click="signup_ctrl.new_user_info(signup_ctrl.new_user)" ui-sref="confirm-email" id="login-create-account-btn" class="button button-calm col col-50 col-offset-25"> Create Account </button>
+    </div>
+    <!-- end of signup button -->
+
+     <!-- fb and li OR paragraph -->
+    <div>
+        <p id="login-btn-p"><u>Login with:</u></p>
+    </div>
+    <!-- end of fb and li OR paragraph -->
+    <!-- facebook and linkedin signup buttons -->
+    <div id="login-fb-li-row" class="row login-button">
+        <button ui-sref="confirm-email" class="button button-outline button-calm login-fb-li-buttons"> Facebook </button>
+        <button ui-sref="confirm-email" id="login-li-btn" class="button button-outline button-calm login-fb-li-buttons"> LinkedIn </button>
+    </div>
+    <!-- end of facebook and linkedin signup buttons -->
+    <!-- login or paragraph -->
+    <div>
+        <p id="login-btn-p"><u>Or:</u></p>
+    </div>
+    <!-- end of login or paragraph -->
+     <!-- login button -->
+    <div class="row login-button">
+        <button ui-sref="login" class="button button-calm col col-33 col-offset-33"> Login </button>
+    </div>
+    <!-- end of login button -->
+</ion-content>

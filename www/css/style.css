@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Orkney-Light";
+    src: url("../fonts/Orkney-Light.otf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+ion-content {
+    background-color: snow;
+}
+#login-nav-bar {
+    position: relative;
+    margin-bottom: 35px;
+}
+#library-list-nav-bar {
+    position: relative;
+    margin-bottom: -1px;
+}
+.login-label {
+    margin: 20px !important;
+    border-radius: 15px;
+}
+.login-input-list {
+    margin-bottom: -6px !important;
+}
+.login-input {
+    height: 60px !important;
+    font-size: 15px !important;
+    font-family: Orkney-Light;
+    padding-top: 8px !important;
+
+}
+.input-label {
+    top: 3px !important;
+}
+.login-span-label {
+    position: absolute !important;
+}
+.login-button {
+    margin-bottom: 10px;
+}
+.login-fb-li-buttons {
+    padding: 5px;
+    width: 120px;
+    margin: 0 auto;
+}
+#login-create-account-btn {
+    margin-bottom: 5px;
+}
+#login-li-btn {
+    margin-left: -27px;
+}
+#login-fb-li-row {
+    margin-bottom: 15px;
+}
+#login-btn-p {
+    font-size: 22px;
+    text-align: center;
+    font-family: Orkney-Light;
+    color: #2F4F4F;
+    letter-spacing: 0.2px;
+}
+
+/*  library feed view */
+#library-feed-less-divider {
+    margin-top: 8px !important;
+}
+#nav-bar-left-button {
+    color: white;
+    font-size: 22px;
+    border-color: #11c1f3;
+}
+.library-feed-floor {
+    font-family: Orkney-Light;
+}
+#library-list-ion-item {
+    padding-right: 10px;
+}
+#library-list-phone-btn {
+    font-size: 30px;
+}

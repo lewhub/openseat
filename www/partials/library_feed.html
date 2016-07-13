@@ -1,0 +1,33 @@
+<ion-content>
+     <!-- nav bar heading -->
+    <div id="login-nav-bar" class="bar bar-header bar-calm">
+         <button id="nav-bar-left-button" ui-sref="library_list" class="button ion-chevron-left"></button>
+        <h1 class="title"> Choose a Floor </h1>
+        <button ng-click="global.logout()" class="button button-clear">Logout</button>
+    </div>
+    <!-- end of nav bar heading -->
+
+    <!-- nav bar sub heading -->
+    <div class="bar bar-subheader bar-royal">
+        <h2 class="title"> {{ library_feed_ctrl.library_name }} </h2>
+    </div>
+    <!-- end of nav bar sub heading -->
+
+    <ion-list>
+        <!-- empty floors list -->
+        <div id="library-feed-less-divider" class="item item-divider"> Less Occupied </div>
+        <ion-item ng-repeat="floor in library_feed_ctrl.vacant_floors" ui-sref="floor_blueprint">
+          <h2 class="library-feed-floor"> {{ floor }}  </h2> 
+        </ion-item>
+
+
+        <!-- end of empty floors list -->
+
+        <!-- crowded floors list -->
+        <div class="item item-divider"> More Crowded  </div>
+        <ion-item ng-repeat="floor in library_feed_ctrl.full_floors" ui-sref="floor_blueprint">
+            <h2 class="library-feed-floor"> {{ floor }} </h2>
+        </ion-item>
+        <!-- end of crowded floors list -->
+    </ion-list>
+</ion-content>
