@@ -5,6 +5,7 @@ var body_parser = require("body-parser");
 var morgan = require("morgan");
 var path = require("path");
 var dotenv = require("dotenv").config({ silent: true });
+var port = process.env.PORT || 8100;
 
 // routes
 var user_rts = require("./routes/user_rts.js");
@@ -38,8 +39,8 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, "../www", "index.html"))
 })
 
-
-app.listen(8100, function(err){
+console.log("this is PORT >>>>>>>", port)
+app.listen(port, function(err){
     if (err) return console.log(err)
     console.log("listening on port 8100")
 })
