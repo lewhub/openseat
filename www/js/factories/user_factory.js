@@ -5,7 +5,7 @@
         user_fac.$inject = ["$http"];
 
         function user_fac($http){
-            var api = "/users/";
+            var api = "https://open-seat.herokuapp.com/users/";
             var service = {
                 index: index,
                 create: create,
