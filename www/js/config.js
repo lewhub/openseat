@@ -8,7 +8,7 @@
                     return false;
                 }
             }
-            if (!isWebView()){
+            if (!isWebView() && window.platform){
                 $httpProvider.interceptors.push("authInterceptor");
                 $urlRouterProvider.otherwise("/signup");
                 
