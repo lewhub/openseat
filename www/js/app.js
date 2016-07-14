@@ -2,7 +2,7 @@ angular.module('library_app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    console.log(navigator.appCodeName)
+    // console.log(navigator.appCodeName)
     // to see if user is on ionic app or web browser
     // if (window){
     //   console.log(navigator.platform, "web browser")
