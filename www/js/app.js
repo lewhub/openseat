@@ -2,6 +2,10 @@ angular.module('library_app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+     var isWebView = ionic.Platform.isWebView();
+     console.log(ionic.Platform.platform())
+      console.log("visiting on web>>>", isWebView)
+      console.log("hello world")
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -12,5 +16,8 @@ angular.module('library_app', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+   
+
   });
 })
