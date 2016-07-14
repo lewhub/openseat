@@ -8,7 +8,7 @@
                     return false;
                 }
             }
-            if (!isWebView() && navigator.onLine){
+            if (!isWebView() || navigator.onLine){
                 $httpProvider.interceptors.push("authInterceptor");
                 $urlRouterProvider.otherwise("/signup");
                 
