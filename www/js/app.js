@@ -2,7 +2,12 @@ angular.module('library_app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-     var isWebView = ionic.Platform.isWebView();
+     var isWebView;
+     if (ionic.Platform.platform() === "macintel" || ionic.Platform.platform() === "win32" || ionic.Platform.platform() === "linux"){
+       isWebView = true;
+     } else {
+       isWebView = false;
+     }
      console.log(ionic.Platform.platform())
       console.log("visiting on web>>>", isWebView)
       console.log("hello world")
