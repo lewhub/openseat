@@ -8,7 +8,7 @@
                     return false;
                 }
             }
-            if (!isWebView() && navigator.appCodeName !== "Mozilla"){
+            if (!isWebView()){
                 $httpProvider.interceptors.push("authInterceptor");
                 $urlRouterProvider.otherwise("/signup");
                 
