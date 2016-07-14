@@ -1,5 +1,5 @@
 (function(){
-    angular.module("library_app")
+    angular.module("open_seat")
         .controller("GlobalController", GlobalController)
 
         GlobalController.$inject = ["auth_fac", "$rootScope", "$state"];

@@ -1,5 +1,5 @@
 (function(){
-    angular.module("library_app")
+    angular.module("open_seat")
         .factory("authInterceptor", authInterceptor)
 
         authInterceptor.$inject = ["auth_fac"];

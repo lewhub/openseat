@@ -1,4 +1,4 @@
-angular.module('library_app', ['ionic'])
+angular.module('open_seat', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

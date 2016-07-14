@@ -1,5 +1,5 @@
 (function(){
-    angular.module("library_app")
+    angular.module("open_seat")
         .controller("LibraryListCtrl", LibraryListCtrl)
 
         // name, address, photo, phone number, hours, distance from user in miles

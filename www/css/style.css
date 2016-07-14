@@ -78,3 +78,15 @@ ion-content {
 #library-list-phone-btn {
     font-size: 30px;
 }
+/* profile view */
+#profile-content-div {
+    text-align: center;
+}
+#profile-button-div {
+    margin-top: 20px;
+}
+.profile-button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

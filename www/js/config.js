@@ -1,5 +1,5 @@
 (function(){
-    angular.module("library_app")
+    angular.module("open_seat")
         .config(function($stateProvider, $urlRouterProvider, $httpProvider){
             var isWebView = function(){
                 if (ionic.Platform.platform() === "macintel" || ionic.Platform.platform() === "win32" || ionic.Platform.platform() === "linux"){
@@ -40,6 +40,11 @@
                     .state("floor_blueprint", {
                         url: "/floor-blueprint",
                         templateUrl: "partials/floor_blueprint.html"
+                    })
+                    .state("user-profile", {
+                        url: "/profile",
+                        templateUrl: "partials/user_profile.html",
+                        controller: "ProfileController as profile_ctrl"
                     })
             } else {
                 $urlRouterProvider.otherwise("/");
