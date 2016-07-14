@@ -2,11 +2,14 @@ angular.module('library_app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    if (window){
-      console.log(navigator.platform, "web browser")
-    } else {
-      console.log("not web broswer: phone.")
-    }
+
+    // to see if user is on ionic app or web browser
+    // if (window){
+    //   console.log(navigator.platform, "web browser")
+    // } else {
+    //   console.log("not web broswer: phone.")
+    // }
+    
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
