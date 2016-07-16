@@ -125,6 +125,18 @@ module.exports = {
                 res.json({success: true, message: "login successful", user: user, token: new_token})
             })
     },
+    grant_token: function(req, res){
+        User
+            .findOne( { email: req.body.email } )
+            .exec(function(err, user){
+                if (err) return console.log(err)
+                if (!user) return res.json( { success: false, message: "invalid email" } )
+                var new_token = jwt.sign(user, process.env.secret, {
+                    expiresIn: "1h"
+                })
+                res.json( { success: true, message: "token granted", user: user, token: token } )
+            })
+    },
     authenticate: function(req, res, next){
         var token = req.body.token || req.query.token || req["headers"]["x-access-token"];
         if (token){

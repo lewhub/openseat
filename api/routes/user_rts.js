@@ -15,6 +15,8 @@ user_router.post("/login", user_ctrl.login);
 user_router.get("/", user_ctrl.index);
 // edit, delete and show one user
 user_router.get("/:id", user_ctrl.show);
+// grant a token on email confirm
+user_router.post("/grant-token", user_ctrl.grant_token);
 
 
 // for routes that require authentication before continuing

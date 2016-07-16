@@ -14,7 +14,8 @@
                 show: show,
                 update: update,
                 delete_user: delete_user,
-                login: login
+                login: login,
+                grant_token: grant_token
             }
             return service;
 
@@ -35,6 +36,9 @@
             }
             function login(data){
                 return $http.post(api + "login", data)
+            }
+            function grant_token(email){
+                return $http.post(api + "grant-token", email)
             }
         }
 })()
