@@ -135,7 +135,7 @@ module.exports = {
                 var new_token = jwt.sign(user, process.env.secret, {
                     expiresIn: "1h"
                 })
-                res.json( { success: true, message: "token granted", user: user, token: token } )
+                res.json( { success: true, message: "token granted", user: user, token: new_token } )
             })
     },
     authenticate: function(req, res, next){
