@@ -26,6 +26,8 @@
                         console.log(res);
                          var pTag = angular.element( document.querySelector("#p-tag-test") )
                          pTag.text("Success!!!");
+                        $window.localStorage["current_user_id"] = temp_user_id;
+                        $window.localStorage.removeItem("temp_user_id");
                         $state.go("library_list")
                         $scope.$broadcast("scroll.refreshComplete");
                     }, errCallback)
