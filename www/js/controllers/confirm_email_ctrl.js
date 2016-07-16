@@ -9,9 +9,10 @@
             vm.title = "confirm email ctrl title";
 
             var errCallback = function(res){
+                var temp_user_id = $window.localStorage["temp_user_id"];
                 console.log("error >>>", res);
                 var pTag = angular.element( document.querySelector("#p-tag-test") )
-                    pTag.text("Failure to show user");
+                    pTag.text(temp_user_id);
                      $scope.$broadcast("scroll.refreshComplete");
             }
 
