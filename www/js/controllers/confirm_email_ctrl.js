@@ -4,7 +4,7 @@
 
         ConfirmEmailCtrl.$inject = ["$scope", "user_fac", "$window"]
 
-        function ConfirmEmailCtrl($scope, user_fac){
+        function ConfirmEmailCtrl($scope, user_fac, $window){
             var vm = this;
             vm.title = "confirm email ctrl title";
 
