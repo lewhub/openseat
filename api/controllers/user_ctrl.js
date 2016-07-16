@@ -75,6 +75,7 @@ module.exports = {
             .findOne({_id: req.params.id})
             .exec(function(err, user){
                 if (err) return console.log(err)
+                console.log("user USER USER USER", user)
                 res.json({success: true, message: "user found", user: user})
             })
     },
