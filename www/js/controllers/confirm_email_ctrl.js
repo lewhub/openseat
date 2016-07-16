@@ -22,7 +22,7 @@
                     console.log(res.data)
                     // var pTag = angular.element( document.querySelector("#p-tag-test") )
                     // pTag.text(res.data);
-                    user_fac.grant_token(res.data.user.email).then(function(res){
+                    user_fac.grant_token({email: res.data.user.email}).then(function(res){
                         console.log(res);
                          var pTag = angular.element( document.querySelector("#p-tag-test") )
                          pTag.text("Success!!!");
