@@ -36,6 +36,8 @@
             }
             function logout(){
                 $window.localStorage.removeItem("jwt_token");
+                $window.localStorage.removeItem("current_user_id");
+                $window.localStorage.removeItem("library_name");
             }
             
         }

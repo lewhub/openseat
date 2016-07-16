@@ -1,4 +1,7 @@
 <ion-content>
+    <ion-refresher pulling-text="let go to confirm email" on-refresh="confirm_email_ctrl.checkTempUser()" pulling-icon="ion-ios-arrow-thin-down">
+
+    </ion-refresher>
        <!-- nav bar -->
     <div id="login-nav-bar" class="bar bar-header bar-calm">
          <button id="nav-bar-left-button" ui-sref="signup" class="button ion-chevron-left"></button>
@@ -8,7 +11,7 @@
     <div style="text-align: center; font-size: 18px;">
         <p>Please check your email and follow the confirmation link.</p>
     <hr>
-    <p>This view is where a user will be asked to verify their university email account after they have either signed up or signed in with Facebook or LinkedIn. </p>
-            <button style="margin-top: 50px;" ui-sref="library_list" class="button button-calm col col-33 col-offset-33"> Next</button> 
+    <p id="p-tag-test">This view is where a user will be asked to verify their university email account after they have either signed up or signed in with Facebook or LinkedIn. </p>
+            <button id="drag-test-btn" style="margin-top: 50px;" ui-sref="library_list" class="button button-calm col col-33 col-offset-33"> Next</button> 
    </div> 
 </ion-content>

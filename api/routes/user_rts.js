@@ -3,8 +3,13 @@ var user_router = express.Router();
 var user_ctrl = require("../controllers/user_ctrl.js");
 
 
-// create a user or login to a user account
-user_router.post("/", user_ctrl.create);
+// email verification route
+user_router.get("/email-verification/:url", user_ctrl.create);
+// user_router.post("/", user_ctrl.create);
+
+
+// login to a user account
+
 user_router.post("/login", user_ctrl.login);
 // show all users
 user_router.get("/", user_ctrl.index);

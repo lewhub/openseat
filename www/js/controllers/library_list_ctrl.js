@@ -64,6 +64,11 @@
                 console.log(name)
             }
 
+            vm.goToProfile = function(){
+                var user_id = $window.localStorage["current_user_id"];
+                $state.go("user-profile", { id: user_id });
+            }
+
             //  vm.showPartAddress = function(address){
             //     var addr_array = address.split(" ")
             //     var sum = 0;

@@ -1,5 +1,42 @@
 var User = require("../models/user.js");
+var Temp_User = require("../models/temp_user.js");
 var jwt = require("jsonwebtoken");
+var mongoose = require("mongoose");
+var ev = require("email-verification")(mongoose);
+var dotenv = require("dotenv").load( { silent: true } );
+
+// email configuration
+
+// "http://localhost:8100/users/email-verification/${URL}" for local testing
+// http://open-seat.herokuapp.com/users/email-verification/${URL} for deployment
+ev.configure({
+    verificationURL: "http://open-seat.herokuapp.com/users/email-verification/${URL}",
+    persistentUserModel: User,
+    tempUserModel: Temp_User,
+    URLFieldName: "verify_url",
+    transportOptions: {
+        service: "Gmail",
+        auth: {
+            user: "jimtomorrow55@gmail.com",
+            pass: process.env.email_password
+        }
+    },
+     verifyMailOptions: {
+        from: "<jimtomorrow55@gmail.com>",
+        subject: "Open Seat: confirm account",
+         html: '<p>Please verify your Open Seat account by clicking <a href="${URL}">this link</a>. If you are unable to do so, copy and ' +
+        'paste the following link into your browser:</p><p>${URL}</p>',
+         text: 'Please verify your account by clicking the following link, or by copying and pasting it into your browser: ${URL}'
+    },
+    confirmMailOptions: {
+        from: "<jimtomorrow55@gmail.com>",
+        subject: "Open Seat: Account Confirmed",
+        html: "<p>Your account has been verified. Welcome to Open Seat.</p>",
+        text: "verified."
+    }
+}, function(err, options){
+    if (err) return console.log(err);
+})
 
 module.exports = {
     index: function(req, res){
@@ -10,15 +47,27 @@ module.exports = {
                 res.json({success: true, message: "all users", users: users})
             })
     },
+    // create: function(req, res){
+    //     var user = new User(req.body);
+    //     user.password = user.generateHash(req.body.password);
+    //     user.save(function(err, new_user){
+    //         if (err) return console.log(err)
+    //         var new_token = jwt.sign(new_user, process.env.secret, {
+    //             expiresIn: "1h"
+    //         })
+    //         res.json({success: true, message: "new user created", user: new_user, token: new_token})
+    //     })
+    // },
     create: function(req, res){
-        var user = new User(req.body);
-        user.password = user.generateHash(req.body.password);
-        user.save(function(err, new_user){
+        ev.confirmTempUser(req.params.url, function(err, new_user){
             if (err) return console.log(err)
-            var new_token = jwt.sign(new_user, process.env.secret, {
-                expiresIn: "1h"
-            })
-            res.json({success: true, message: "new user created", user: new_user, token: new_token})
+            if (!new_user) return res.json({success: false, message: "link expired. please request another."})
+            else if (new_user) {
+                var new_token = jwt.sign(new_user, process.env.secret, {
+                    expiresIn: "1h"
+                })
+                res.json( { success: true, message: "user created and confirmed by email.", user: new_user, token: new_token } )
+            }
         })
     },
     show: function(req, res){
@@ -54,7 +103,7 @@ module.exports = {
     delete: function(req, res){
         if (req.params.id === req.decoded._doc._id){
              User
-            .remove({_id: req.params.id}, function(err){
+            .remove({_id: req.decoded._doc._id}, function(err){
                 if (err) return console.log(err)
                 res.json({success: true, message: "user successfully deleted"})
             })

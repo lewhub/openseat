@@ -7,10 +7,10 @@
     </div>
     <!-- end of nav bar heading -->
     <div id="profile-content-div">
-        <h1>Name</h1>
+        <h1> {{ profile_ctrl.user_info.name }} </h1>
         <hr>
-        <h3>School</h3>
-        <h3>Email</h3>
+        <h3> {{ profile_ctrl.user_info.school }} </h3>
+        <h3> {{ profile_ctrl.user_info.email }} </h3>
         <div id="profile-button-div">
             <button ng-click="profile_ctrl.change_password()" class="button button-calm profile-button col col-50 col-offset-25">Change Password</button>
             <button ng-click="profile_ctrl.confirm_delete()" class="button button-assertive profile-button col col-50 col-offset-25">Delete Account</button>

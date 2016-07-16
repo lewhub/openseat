@@ -20,7 +20,8 @@
                     })
                     .state("confirm-email", {
                         url: "/confirm",
-                        templateUrl: "partials/confirm_email.html"
+                        templateUrl: "partials/confirm_email.html",
+                        controller: "ConfirmEmailCtrl as confirm_email_ctrl"
                     })
                     .state("login", {
                         url: "/login",
@@ -39,10 +40,11 @@
                     })
                     .state("floor_blueprint", {
                         url: "/floor-blueprint",
-                        templateUrl: "partials/floor_blueprint.html"
+                        templateUrl: "partials/floor_blueprint.html",
+                        controller: "FloorBlueprintCtrl as floor_blueprint_ctrl"
                     })
                     .state("user-profile", {
-                        url: "/profile",
+                        url: "/profile/:id",
                         templateUrl: "partials/user_profile.html",
                         controller: "ProfileController as profile_ctrl"
                     })

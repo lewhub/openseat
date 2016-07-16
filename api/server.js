@@ -9,6 +9,7 @@ var port = process.env.PORT || 8100;
 
 // routes
 var user_rts = require("./routes/user_rts.js");
+var temp_user_rts = require("./routes/temp_user_rts.js");
 
 // console.log(process.env)
 
@@ -49,6 +50,7 @@ app.use(function(req, res, next){
 
 // route middleware
 app.use("/users", user_rts);
+app.use("/temp_users", temp_user_rts);
 
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, "../www", "index.html"))

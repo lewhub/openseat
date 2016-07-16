@@ -2,9 +2,9 @@
     angular.module("open_seat")
         .controller("LoginCtrl", LoginCtrl)
 
-        LoginCtrl.$inject = ["$state", "user_fac"]
+        LoginCtrl.$inject = ["$state", "user_fac", "$window"]
 
-        function LoginCtrl($state, user_fac){
+        function LoginCtrl($state, user_fac, $window){
             var vm = this;
             vm.title = "login ctrl title";
 
@@ -18,9 +18,9 @@
                 if (user.email && user.password){
                     user_fac.login(user).then(function(res){
                         console.log("login successful!", res.data)
+                        $window.localStorage["current_user_id"] = res.data.user._id
                         $state.go("library_list");
-                    }, vm.errorCall)
-                    
+                    }, vm.errorCall) 
                 }
             }
         }
