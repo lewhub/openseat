@@ -13,13 +13,14 @@ user_router.get("/email-verification/:url", user_ctrl.create);
 user_router.post("/login", user_ctrl.login);
 // show all users
 user_router.get("/", user_ctrl.index);
+// edit, delete and show one user
+user_router.get("/:id", user_ctrl.show);
 
 
 // for routes that require authentication before continuing
 user_router.use(user_ctrl.authenticate);
 
-// edit, delete and show one user
-user_router.get("/:id", user_ctrl.show);
+
 user_router.patch("/:id", user_ctrl.update);
 user_router.delete("/:id", user_ctrl.delete);
 
