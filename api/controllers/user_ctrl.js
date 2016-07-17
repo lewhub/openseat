@@ -66,7 +66,8 @@ module.exports = {
                 var new_token = jwt.sign(new_user, process.env.secret, {
                     expiresIn: "1h"
                 })
-                res.json( { success: true, message: "user created and confirmed by email.", user: new_user, token: new_token } )
+                res.sendFile(path.join(__dirname, "../www", "partials", "user_confirmed.html"))
+                // res.json( { success: true, message: "user created and confirmed by email.", user: new_user, token: new_token } )
             }
         })
     },
