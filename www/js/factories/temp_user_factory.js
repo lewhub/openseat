@@ -5,9 +5,9 @@
         temp_fac.$inject = ["$http"];
 
         function temp_fac($http){
-            // must change to "https://open-seat.herokuapp.com/users/" when deploying to Heroku
+            // must change to "https://open-seat.herokuapp.com/temp_users/" when deploying to Heroku
             // must change to "/temp_users/ when testing locally"
-            var api = "https://open-seat.herokuapp.com/users/";
+            var api = "https://open-seat.herokuapp.com/temp_users/";
             var service = {
                 index: index,
                 signup: signup
