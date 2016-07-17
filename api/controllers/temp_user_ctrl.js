@@ -22,7 +22,7 @@ ev.configure({
     },
      verifyMailOptions: {
         from: "<openseat.startup@gmail.com>",
-        subject: "Open Seat: confirm account",
+        subject: "Open Seat: Confirm Your Account",
          html: '<p>Please verify your Open Seat account by clicking <a href="${URL}">this link</a>. If you are unable to do so, copy and ' +
         'paste the following link into your browser:</p><p>${URL}</p>',
          text: 'Please verify your account by clicking the following link, or by copying and pasting it into your browser: ${URL}'
@@ -30,7 +30,7 @@ ev.configure({
     confirmMailOptions: {
         from: "<openseat.startup@gmail.com>",
         subject: "Open Seat: Account Confirmed",
-        html: "<p>Your account has been verified. Welcome to Open Seat.</p>",
+        html: "<p>Your account has been verified. Welcome to Open Seat!</p>",
         text: "verified."
     }
 }, function(err, options){

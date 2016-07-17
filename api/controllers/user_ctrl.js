@@ -32,7 +32,7 @@ ev.configure({
     confirmMailOptions: {
         from: "<openseat.startup@gmail.com>",
         subject: "Open Seat: Account Confirmed",
-        html: "<p>Your account has been verified. Welcome to Open Seat.</p>",
+        html: "<p>Your account has been verified. Welcome to Open Seat!</p>",
         text: "verified."
     }
 }, function(err, options){
