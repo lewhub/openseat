@@ -13,7 +13,7 @@
                 console.log("error >>>", res);
                 var pTag = angular.element( document.querySelector("#p-tag-test") )
                     pTag.text(temp_user_id);
-                     $scope.$broadcast("scroll.refreshComplete");
+                    
             }
 
             vm.checkTempUser = function(){
@@ -30,11 +30,12 @@
                         $window.localStorage.removeItem("temp_user_id");
                         $state.go("library_list")
                         $scope.$broadcast("scroll.refreshComplete");
+                        return
                     }, errCallback)
 
                   
                 }, errCallback)
-                
+                $scope.$broadcast("scroll.refreshComplete");
             }
            
         }
