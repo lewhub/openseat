@@ -48,6 +48,11 @@
                         templateUrl: "partials/user_profile.html",
                         controller: "ProfileController as profile_ctrl"
                     })
+                    .state("choose-school-and-username", {
+                        url: "/user-info/:id",
+                        templateUrl: "partials/user_info.html",
+                        controller: "ProfileController as profile_ctrl"
+                    })
             } else {
                 $urlRouterProvider.otherwise("/");
 

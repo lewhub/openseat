@@ -90,3 +90,25 @@ ion-content {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+#school-select {
+    font-size: 12px;
+}
+.user-info-button {
+    margin-bottom: 10px;
+}
+#profile-edit-button {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 75px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#profile-cancel-btn {
+    margin-top: 10px;
+}
+#confirm-email-instruction-heading {
+    padding: 20px;
+}

@@ -1,0 +1,32 @@
+<ion-content>
+    <!-- nav bar -->
+    <div id="login-nav-bar" class="bar bar-header bar-calm">
+        <h1 class="title">Additional Info</h1>
+    </div>
+    <div class="list">
+        <!-- username input -->
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Create a Username</span>
+            <input ng-model="profile_ctrl.additionalInfo.username" type="text" placeholder="Username">
+        </label>
+        <!-- end of username input -->
+        <!-- school select -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Select a School
+            </div>
+            <select ng-model="profile_ctrl.additionalInfo.school" id="school-select">
+                <option selected>University of Wisconsin Madison</option>
+                <option>Howard University</option>
+                <option>Michigan State University</option>
+                <option>University of California Berkeley</option>
+            </select>
+        </label>
+        <!-- end of school select -->
+    </div>
+      <!-- user-info button -->
+    <div class="row user-info-button">
+        <button ng-click="profile_ctrl.updateUser()" class="button button-calm col col-33 col-offset-33"> Save </button>
+    </div>
+    <!-- end of user-info button -->
+</ion-content>

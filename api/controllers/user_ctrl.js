@@ -91,6 +91,9 @@ module.exports = {
                 if (req.body.school){
                     user.school = req.body.school;
                 }
+                if (req.body.username){
+                    user.username = req.body.username;
+                }
                 user.save(function(err, updated_user){
                     if (err) return console.log(err)
                     res.json({success: true, message: "user updated", user: updated_user})
@@ -150,5 +153,18 @@ module.exports = {
         } else {
             return res.status(403).json({success: false, message: "no token found. this is a restricted section. please create an account or login."})
         }
+    },
+    update_password: function(req, res){
+        User
+            .findOne({_id: req.params.id})
+            .exec(function(err, user){
+                if (err) return console.log(err)
+                if (!user.validPassword(req.body.password)) return res.json( { success: false, message: "the password you entered is incorrect. try again..." } )
+                user.password = user.generateHash(req.body.new_password);
+                user.save(function(err, updated_user){
+                    if (err) return console.log(err)
+                    res.json( { success: true, message: "password changed!", user: updated_user } )
+                })
+            })
     }
 }

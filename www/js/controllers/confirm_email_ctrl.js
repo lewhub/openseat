@@ -16,6 +16,11 @@
                     
             }
 
+             vm.goToSetup = function(){
+                var user_id = $window.localStorage["current_user_id"];
+                $state.go("choose-school-and-username", { id: user_id });
+            }
+
             vm.checkTempUser = function(){
                 var temp_user_id = $window.localStorage["temp_user_id"];
                 user_fac.show(temp_user_id).then(function(res){
@@ -28,11 +33,10 @@
                          pTag.text("Success!!!");
                         $window.localStorage["current_user_id"] = temp_user_id;
                         $window.localStorage.removeItem("temp_user_id");
-                        $state.go("library_list")
+                        vm.goToSetup()
                         $scope.$broadcast("scroll.refreshComplete");
                         return
                     }, errCallback)
-
                   
                 }, errCallback)
                 $scope.$broadcast("scroll.refreshComplete");

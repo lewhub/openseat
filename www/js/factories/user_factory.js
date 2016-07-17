@@ -15,7 +15,8 @@
                 update: update,
                 delete_user: delete_user,
                 login: login,
-                grant_token: grant_token
+                grant_token: grant_token,
+                update_password: update_password
             }
             return service;
 
@@ -39,6 +40,9 @@
             }
             function grant_token(email){
                 return $http.post(api + "grant-token", email)
+            }
+            function update_password(id, data){
+                return $http.patch(api + "change-password/" + id, data);
             }
         }
 })()

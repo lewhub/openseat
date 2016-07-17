@@ -22,7 +22,7 @@ user_router.post("/grant-token", user_ctrl.grant_token);
 // for routes that require authentication before continuing
 user_router.use(user_ctrl.authenticate);
 
-
+user_router.patch("/change-password/:id", user_ctrl.update_password);
 user_router.patch("/:id", user_ctrl.update);
 user_router.delete("/:id", user_ctrl.delete);
 

@@ -5,7 +5,7 @@ var bcrypt = require("bcrypt-nodejs");
 var temp_schema = Schema({
     email: {type: String, unique: true, required: true},
     password: {type: String, required: true},
-    name: { type: String },
+    username: {type: String, unique: true},
     school: String,
     verify_url: String,
     createdAt: { type: Date, expires: "24h" }
