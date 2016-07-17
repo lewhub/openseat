@@ -4,6 +4,7 @@ var jwt = require("jsonwebtoken");
 var mongoose = require("mongoose");
 var ev = require("email-verification")(mongoose);
 var dotenv = require("dotenv").load( { silent: true } );
+var path = require("path");
 
 // email configuration
 
