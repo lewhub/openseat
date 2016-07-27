@@ -1,4 +1,4 @@
-angular.module('open_seat', ['ionic'])
+angular.module('open_seat', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

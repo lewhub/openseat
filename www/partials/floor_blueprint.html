@@ -1,15 +1,10 @@
 <ion-content>
  <!-- nav bar heading -->
-    <div id="login-nav-bar" class="bar bar-header bar-calm">
+    <div id="login-nav-bar-blue" class="bar bar-header bar-calm">
         <button id="nav-bar-left-button" ui-sref="library_feed" class="button ion-chevron-left"></button>
         <h1 class="title"> Avaiable Seats </h1>
         <button ng-click="floor_blueprint_ctrl.goToProfile()" class="button icon ion-person"></button>
     </div>
  <!-- end of nav bar heading -->
- <div style="text-align: center; font-size: 18px;">
-        <p>Individual Floor Seating</p>
-       
-    <hr>
-    <p>This view is where a the floor plan/blueprint is going to show which seats are available.</p>
-   </div> 
+  <div id="map" data-tap-disabled="true"></div>
 </ion-content>

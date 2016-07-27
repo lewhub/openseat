@@ -63,6 +63,70 @@
             
             vm.all_libraries = new Array();
 
+             /* University of Wisconsin Madison Library Place IDs 
+
+                Memorial Library Place ID
+                Place ID: ChIJ62GZSjVTBogRkwF6ajiDAek
+                Address: 728 State St, Madison, WI 53706, USA
+
+                Woodman Astronomical Library
+                Place ID: ChIJAQZcT8isB4gRHW2Px81OaIg
+                475 N Charter St, Madison, WI 53706, USA
+                        
+                Kohler Art Library
+                Place ID: ChIJFcg858qsB4gRjzJTovkmbXI
+                800 University Ave, Madison, WI 53706, USA
+
+                Business Library
+                Place ID: ChIJrdw6sMusB4gR4jw375UJDZY
+                975 University Ave, Madison, WI 53706, USA
+
+                Chemistry Library
+                Place ID: ChIJ1w_Nc8msB4gRRcys2w1dp0U
+                1101 University Ave, Madison, WI 53706, USA
+
+                College Library
+                Place ID: ChIJq0BshbWsB4gRhDwjfHm5e8U
+                600 N Park St, Madison, WI 53706, USA
+
+                Ebling Library for the Health Sciences
+                Place ID: ChIJhavpw4ysB4gRNxP3VRFi6WM
+                750 Highland Ave, Madison, WI 53705, USA
+
+                Geography Library
+                Place ID: ChIJbzJlhMqsB4gRCXuZRn7djtE
+                550 N Park St, Madison, WI 53706, USA
+
+                University of Wisconsin Law School
+                Place ID: ChIJgX-oOcqsB4gR_GEVISbXN6E
+                975 Bascom Mall, Madison, WI 53706, USA
+
+                Limnology Library
+                Place ID: ChIJsWI1d7WsB4gRa1LUs-CEdsg
+                680 N Park St, Madison, WI 53706, USA
+
+                Kleene Mathematics Library
+                Place ID: ChIJ2wAAvsmsB4gR55SgHGq5h4E
+                480 Lincoln Dr, Madison, WI 53706, USA
+
+                MERIT Library
+                Place ID: ChIJq_ofTMmsB4gR1zvmlp5UVv4
+                225 N Mills St, Madison, WI 53715, USA
+
+                Physics Library
+                Place ID: ChIJafrcAcmsB4gRSomGCKHQMXk
+                1150 University Ave, Madison, WI 53706, USA
+
+                Somers Social Science Reference Library
+                Place ID: ChIJCcUSKbasB4gRQPC-7jf0ikU
+                William H. Sewell Social Sciences Building, 1180 Observatory Dr #8432, Madison, WI 53706, USA
+
+                Lowell E Noland Zoology Building
+                Place ID: ChIJ7ScUNcmsB4gR2qKrJkZwXmA
+                Lowell E Noland Zoology Building, Madison, WI 53706, USA
+                        
+            */
+
             vm.wisconsin_libraries = [
                 { name: "Astronomy Library", address: "6515 Sterling Hall 475", address_two: "N. Charter St.", phone: "(608)-262-1320", hours: "9:00am - 5:00pm", photo: "https://lh5.googleusercontent.com/proxy/I2oxzAbxqknvSt5bTndGkvzNISnc3vweGga8ofROIqU8TEFTHeptfd7mwViAa1ap8xA_tZI5YRN7XNVSVgXNntlAEzf0oA=w408-h306"},
                 { name: "Art Library", address: "160 Conrad A. Elvehjem", address_two: "Building, 800 University Ave.", phone: "(608)-263-2258", hours: "9:00am - 4:45pm", photo: "https://lh4.googleusercontent.com/proxy/MQAVpUmqd49E7gWYmLtNfDv0m74lwCFHvJDCv4zt4JsokO7-R5eU2eLK52BqKXMhQgVIhgyoQEqyAXh8b3dFcg77xrxGr5bZNEeBu53I4wMmsUu1mmQPk-2BAXMTmCUzg-SpJzPVEoiiQC8FcaWltYzS9xSnYVU=w408-h305" },
