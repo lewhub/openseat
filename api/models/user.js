@@ -5,7 +5,7 @@ var bcrypt = require("bcrypt-nodejs");
 var user_schema = Schema({
     email: {type: String, unique: true, required: true},
     password: {type: String, required: true},
-    username: {type: String, unique: true},
+    username: {type: String},
     school: String
 })
 
