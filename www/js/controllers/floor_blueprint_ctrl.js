@@ -74,7 +74,6 @@
                     }
                 })
 
-
                 // adding a marker for the current position of the user once the map loads
                 google.maps.event.addListenerOnce(vm.map, "idle", function(){
                     var marker = new google.maps.Marker({
