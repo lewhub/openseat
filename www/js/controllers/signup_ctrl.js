@@ -17,6 +17,7 @@
             vm.new_user_info = function(user){
                 if (user.email && user.password){
                         temp_fac.signup(user).then(function(res){
+                        console.log("this is res from temp_fac signup method", res);
                         $window.localStorage["temp_user_id"] = res.data.user._id
                         console.log("temporary signup successful!", res.data)
                     }, vm.errorCall)
